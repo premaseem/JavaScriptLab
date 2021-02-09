@@ -6,15 +6,36 @@
 <body>
 
 <div id="mydiv"></div>
+<div id="part2"> part 2</div>
+<div id="part3"> part 2</div>
+
+<h1 id="sandy"></h1>
 
 <script type="text/babel">
+    let myName = "Aseem";
+    const myhtmlelement = (
+        <table>
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tr>
+                <td>{myName}</td>
+            </tr>
+            <tr>
+                <td>Elsa</td>
+            </tr>
+        </table>
+    );
+
     class Hello extends React.Component {
         render() {
-            return <h1>Hello World!</h1>
+            return <h1>Hello World! {new Date().getTime()}</h1>
         }
     }
 
     ReactDOM.render(<Hello />, document.getElementById('mydiv'))
+    ReactDOM.render(<h2> This is part 2 rendered. </h2>, document.getElementById('part2'))
+    ReactDOM.render(myhtmlelement, document.getElementById('sandy'))
 </script>
 
 </body>
