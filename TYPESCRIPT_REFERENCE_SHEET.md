@@ -139,4 +139,99 @@ Method − Methods facilitate communication between objects.
 
 # Functions 
 Typescript does enhance functions with strong signatures we can use to define parameters and return types.
+the number of values passed to a function must match the number of parameters defined. 
+
+## call by value
+This method copies the actual value of an argument into the formal parameter of the function. In this case, changes made to the parameter inside the function have no effect on the argument.
+
+## call by reference or pointer 
+This method copies the address of an argument into the formal parameter. Inside the function, the address is used to access the actual argument used in the call. This means that changes made to the parameter
+
+## Optional Parameters 
+Optional parameters can be used when arguments need not be compulsorily passed for a function’s execution. A parameter can be marked optional by appending a question mark to its name. The optional parameter should be set as the last argument in a function.
+
+    function disp_details(id:number,name:string,mail_id?:string) {
+    console.log("ID:", id);
+    
+    if(mail_id!=undefined)  
+        console.log("Email Id",mail_id);
+    }
+    disp_details(123,"John");
+    disp_details(111,"mary","mary@xyz.com");
+
+## Rest Parameters
+Rest parameters are similar to variable arguments in Java. To declare a rest parameter, the parameter name is prefixed with three periods. Any nonrest parameter should come before the rest parameter.
+    
+    function addNumbers(...nums:number[]) {  
+    
+        for(i = 0;i<nums.length;i++) {
+            sum = sum + nums[i];
+        }
+        console.log("sum of the numbers",sum)
+    }
+    addNumbers(1,2,3)
+    addNumbers(10,10,10,10,10)
+Note: Rest cannot follow optional params 
+
+## Default Parameters 
+Function parameters can also be assigned values by default. However, such parameters can also be explicitly passed values.
+
+    function calculate_discount(price:number,rate:number = 0.50) {
+    var discount = price * rate;
+    console.log("Discount Amount: ",discount);
+    }
+    calculate_discount(1000)
+    calculate_discount(1000,0.30)
+
+## Anonymous Function
+Functions that are not bound to an identifier (function name) are called as anonymous functions. These functions are dynamically declared at runtime. 
+Anonymous functions can accept inputs and return outputs, just as standard functions do. An anonymous function is usually not accessible after its initial creation.
+Variables can be assigned an anonymous function. Such an expression is called a function expression.
+
+    var res = function(a:number,b:number) {
+        return a*b;  
+    };
+    console.log(res(12,2)) 
+
+# Function Constructor
+Just like class object, new keyword can be called to construct an Anonymous function. 
+
+    var myFunction = new Function("a", "b", "return a * b");
+    var x = myFunction(4, 3);
+    console.log(x);
+
+## Recursion and TypeScript Functions
+Recursion is a technique for iterating over an operation by having a function call to itself repeatedly until it arrives at a result. Recursion is best applied when you need to call the same function repeatedly with different parameters from within a loop.
+
+## Lambda Function or Arrow Function Expression 
+It is an anonymous function expression that points to a single line of code.
+    
+    var func = x => {
+        if(typeof x=="number") {
+            console.log(x+" is numeric")
+        } 
+        else if(typeof x=="string") {
+            console.log(x+" is a string")
+        }
+    }
+
+## Function Overloads
+Functions have the capability to operate differently on the basis of the input provided to them. In other words, a program can have multiple methods with the same name with different signature and implementation. This mechanism is termed as Function Overloading. TypeScript provides support for function overloading.
+Note − The function signature doesn’t include the function’s return type.
+
+    function disp(s1:string):void;
+    function disp(n1:number,s1:string):void;
+    
+    function disp(x:any,y?:any):void {
+    console.log(x);
+    console.log(y);
+    }
+    disp("abc")
+    disp(1,"xyz");
+
+
+
+
+
+
 
