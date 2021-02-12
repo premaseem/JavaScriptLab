@@ -2,9 +2,15 @@
 https://www.educative.io/blog/typescript-tutorial
 
 # What is type script 
+TypeScript is a strongly typed, object oriented, compiled language.
+TypeScript is JavaScript for application-scale development. 
 Typescript is a typed superset of JavaScript, create to provide type saftey, object oriented programming for big Js projects.
 When you compile your TS code, all the Typescript stuff goes away and produces clean, cross-platform safe Javascript code.
- 
+Semicolons are optional in TypeScript.
+
+# JavaScript is TypeScript
+This means that any valid .js file can be renamed to .ts and compiled with other TypeScript files.
+
 # Installation, version check and compilation 
     $ npm install -g typescript
     $ tsc -v 
@@ -48,6 +54,22 @@ If you want multiple lines or variable substitution, use `${}` with backtick
     and I am 22 year old `
     cosole.log(lname) 
     
+# TypeScript and Object Orientation
+Object Orientation considers a program as a collection of objects that communicate with each other via mechanism called methods.
+   
+Object − An object is a real time representation of any entity. 
+Every object must have three features −
+
+    State − described by the attributes of an object
+    
+    Behavior − describes how the object will act
+    
+    Identity − a unique value that distinguishes an object from a set of similar such objects.
+
+Class − A class in terms of OOP is a blueprint for creating objects. A class encapsulates data for the object.
+
+Method − Methods facilitate communication between objects.
+
 # Functions 
 Typescript does enhance functions with strong signatures we can use to define parameters and return types.
 
