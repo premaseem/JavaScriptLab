@@ -1,7 +1,9 @@
+
 class Greeting{
-    greet(arg): void {
-        console.log("hello ",arg)
+    name:string = "aseem"
+    greet(arg:string){
+        console.log(arg, this.name)
     }
 }
 var obj = new Greeting()
-obj.greet("prem")
+obj.greet("hello1234")

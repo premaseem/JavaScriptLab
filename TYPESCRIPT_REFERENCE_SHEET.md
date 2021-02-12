@@ -2,15 +2,9 @@
 https://www.educative.io/blog/typescript-tutorial
 
 # What is type script 
-TypeScript is a strongly typed, object oriented, compiled language.
-TypeScript is JavaScript for application-scale development. 
 Typescript is a typed superset of JavaScript, create to provide type saftey, object oriented programming for big Js projects.
 When you compile your TS code, all the Typescript stuff goes away and produces clean, cross-platform safe Javascript code.
-Semicolons are optional in TypeScript.
-
-# JavaScript is TypeScript
-This means that any valid .js file can be renamed to .ts and compiled with other TypeScript files.
-
+ 
 # Installation, version check and compilation 
     $ npm install -g typescript
     $ tsc -v 
@@ -27,11 +21,22 @@ Built-in => number, string, boolean, undefined, null, and void
 User-defined => Interface, class, enum, array, tuple
 
 # Assigning types
-let variableName: typeScriptType = value;  
+
+    let variableName: typeScriptType = value;  
 
 ## Any type 
 Any is loose typing in JS. `any` type would infer the type dynamically. It is 
-let myvar: any = 'This is a String'
+
+    let myvar: any = 'This is a String'
+
+## Built-in type
+number: Double precision 64-bit floating point values for ints and fractions
+string: string with single, double quote and backticks for multi lines.
+boolean: true or false
+void: used on function return type to represent non returning functions ( like java)
+null: represents intentional absence of a value
+undefined: denotes value give to uninitialzed var
+
 ## Tuples 
 You can express an array when you know the type of a fixed number of elements and predefine your types in order.
 
@@ -53,6 +58,68 @@ If you want multiple lines or variable substitution, use `${}` with backtick
     var lname:string = `I am ${namevar}
     and I am 22 year old `
     cosole.log(lname) 
+
+
+# Type Assertion in TypeScript
+The reason why it's not called "type casting" is that casting generally implies some sort of runtime support while, “type assertions” are purely a compile time construct and a way for you to provide hints to the compiler on how you want your code to be analyzed.
+    
+    var str = '1'
+    var str2:number = <number> <any> str   //str is now of type number
+    console.log(typeof(str2))
+
+# TypeScript Variable Scope
+global scope 
+class scope 
+static scope 
+local scope 
+
+    var global_num = 12          //global variable
+    class Numbers {
+    num_val = 13;             //class variable
+    static sval = 10;         //static field
+    
+        storeNum(): void {
+            var local_num = 14;    //local variable
+        }
+    }
+    
+    console.log("Global num: " + global_num)
+    console.log(Numbers.sval)   //static variable
+    var obj = new Numbers();
+    console.log("class var: " + obj.num_val)
+    console.log("static var: " + Numbers.sval)
+
+
+
+# Operators
+An operator defines some function that will be performed on the data. The data on which operators work are called operands
+Ternary, increment, decrement and other java operators
+
+    var num:number = -2 
+    var result = num > 0 ?"positive":"non-positive"
+    console.log(result)
+
+# loops 
+Traditional 
+
+    for(let i=0; i<10;i++){
+        console.log(i) 
+    }
+
+Enhanced loop: would get index, use them over collection
+
+    for(index in arr){
+        console.log(index,arr[index])
+    }
+
+For Each loop: takes function as argument and passes value to function
+
+    arr.forEach(function(value){
+            console.log(value
+        }
+    );
+
+
     
 # TypeScript and Object Orientation
 Object Orientation considers a program as a collection of objects that communicate with each other via mechanism called methods.
