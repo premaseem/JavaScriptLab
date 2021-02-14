@@ -1,6 +1,9 @@
 ============= TypeScript ============= 
 https://www.educative.io/blog/typescript-tutorial
 
+Debugging Type script :
+https://www.jetbrains.com/help/idea/running-and-debugging-typescript.html#ws_ts_run_debug_server_side
+
 # What is type script 
 Typescript is a typed superset of JavaScript, create to provide type saftey, object oriented programming for big Js projects.
 When you compile your TS code, all the Typescript stuff goes away and produces clean, cross-platform safe Javascript code.
@@ -9,6 +12,13 @@ When you compile your TS code, all the Typescript stuff goes away and produces c
     $ npm install -g typescript
     $ tsc -v 
     $ tsc filename.ts
+
+# Running type script frm command prompt
+    $ npm install -g ts-node
+    $ ts-node ./typeScript/concepts/practice.ts
+
+# Starts a TypeScript REPL (interactive typescript console)
+    $ ts-node
 
 # JS Types
 JS has eight types: string, number, null, undefined, object, symbol, bigint, and boolean. 
@@ -228,6 +238,85 @@ Note − The function signature doesn’t include the function’s return type.
     }
     disp("abc")
     disp(1,"xyz");
+
+# Datatype in Type script 
+
+## Numbers Datatype
+TypeScript like JavaScript supports numeric values as Number objects. A number object converts numeric literal to an instance of the number class. The Number class acts as a wrapper and enables manipulation of numeric literals as they were objects.
+
+    var var_name = new Number(value)
+note: In case a non-numeric argument is passed as an argument to the Number’s constructor, it returns NaN (Not–a–Number)
+
+valueOf()
+Returns the number's primitive value.
+
+toString(<base>)
+Returns the string representation of the number's value.
+
+## String Datatype 
+The String object lets you work with a series of characters. It wraps the string primitive data type with a number of helper methods.
+
+## Array 
+
+    // using array
+    var values:number[] = [1,2,3,3] 
+
+    // using Array object 
+    let values: Array<string | number> = ['Apple', 2, 'Orange', 3, 4, 'Banana'];
+    
+    // using array constructor with values 
+    var names:string[] = new Array("Mary","Tom","Jack","Jill") 
+
+    // array constructor with size 
+    var arr_names:number[] = new Array(4) 
+
+# Interface 
+Interfaces are not to be converted to JavaScript. It’s just part of TypeScript.
+
+    interface IPerson {
+    firstName:string,
+    lastName:string,
+    sayHi: ()=>string
+    }
+    
+    var customer:IPerson = {
+    firstName:"Tom",
+    lastName:"Hanks",
+    sayHi: ():string =>{return "Hi there"}
+    } 
+
+# Duck type 
+The TypeScript compiler implements the duck-typing system that allows object creation on the fly while keeping type safety.
+In duck-typing, two objects are considered to be of the same type if both share the same set of properties. Duck-typing verifies the presence of certain properties in the objects, rather than their actual type, to check their suitability. 
+
+    interface IPoint {
+    x:number
+    y:number
+    }
+    function addPoints(p1:IPoint,p2:IPoint):IPoint {
+    var x = p1.x + p2.x
+    var y = p1.y + p2.y
+    return {x:x,y:y}
+    }
+    
+    //Valid
+    var newPoint = addPoints({x:3,y:4},{x:5,y:1})
+    
+    //Error
+    var newPoint2 = addPoints({x:1},{x:4,y:3})
+
+# Name spaces 
+It is similar to package in java 
+A namespace is a way to logically group related code. This is inbuilt into TypeScript unlike in JavaScript where variables declarations go into a global scope and if multiple JavaScript files are used within same project there will be possibility of overwriting or misconstruing the same variables, which will lead to the “global namespace pollution problem” in JavaScript.
+A namespace definition begins with the keyword namespace followed by the namespace name as follows −
+    
+    namespace SomeNameSpaceName {
+    export interface ISomeInterfaceName {      }  
+    export class SomeClassName {      }  
+    } 
+
+
+
 
 
 
