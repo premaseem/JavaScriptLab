@@ -1,3 +1,14 @@
+function display(id:number, name:string):void
+{
+    console.log("Id = " + id + ", Name = " + name);
+}
+
+function multi_return(id_num:number, name:string)
+{
+    console.log("Id = " + id_num + ", Name = " + name);
+    return id_num
+}
+
 function disp_details(id:number,name:string,optinal_email?:string,...nums:number[]) {
     console.log("ID:", id);
     console.log("Name",name);
